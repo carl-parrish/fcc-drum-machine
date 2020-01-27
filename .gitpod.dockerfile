@@ -1,18 +1,22 @@
-image:
-  file: .gitpod.dockerfile
+FROM gitpod/workspace-full
 
-vscode:
-  extensions:
-    - johnpapa.angular-essentials@0.6.3:kn6MdE8GXp3Nplq14ISQWg==
-    - bierner.github-markdown-preview@0.0.2:/2y3s+rxTHIQLjFnQusowg==
-    - humao.rest-client@0.23.0:JNawNa9Juht3Bl5xY2refg==
-    - 2gua.rainbow-brackets@0.0.6:Tbu8dTz0i+/bgcKQTQ5b8g==
-    - WakaTime.vscode-wakatime@2.2.1:5pOtrx5Q2i2UzuEg6Qu0Ug==
-    - asvetliakov.vscode-neovim@0.0.49:gNwuFH7vMPrlA9u3m4fkpQ==
-    - eamodio.gitlens@10.2.0:GNDO73Cmp0fYDiLNxVkbsQ==
+USER gitpod
+
+#Install Google key
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+RUN sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+
+# Install custom tools, runtime, etc.
+RUN sudo add-apt-repository -y ppa:neovim-ppa/unstable
+RUN sudo apt-get update && \
+    sudo apt-get install -y zsh neovim google-chrome-stable
+
+# set the zsh theme 
+ENV ZSH_THEME cloud
 
 
-tasks:
-  - before: printf "\n[settings]\napi_key = $WAKA_TIME_API_KEY\n" > ~/.wakatime.cfg
-    init: npm install
-    command: zsh
+#install NG CLI
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+RUN npm i npm -g
+RUN npm i @angular/cli -g
+RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
