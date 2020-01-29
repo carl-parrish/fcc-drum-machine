@@ -1,27 +1,27 @@
-# DrumMachine
+# Front End Libraries Projects - Build a Drum Machine
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
-## Development server
+For this project I wanted to try on [Tailwindcss](https://tailwindcss.com/), & [SCULLY](https://github.com/scullyio/scully),
+Scully is dependent on Angular 9 though and as of this writting NG 9 hasn't been released. 
+So I'm doing the lion's share in version 8.3.23 then I'll try out upgrading to 9 from the command line
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+*Objective*: Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: https://codepen.io/freeCodeCamp/full/MJyNMd.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Fulfill the below user stories and getting all of the tests to pass. Giving it my own personal style.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- *User Story #1:* I should be able to see an outer container with a corresponding id="drum-machine" that contains all other elements.
 
-## Running unit tests
+- *User Story #2:* Within #drum-machine I can see an element with a corresponding id="display".
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- *User Story #3:* Within #drum-machine I can see 9 clickable drum pad elements, each with a class name of drum-pad, a unique id that describes the audio clip the drum pad will be set up to trigger, and an inner text that corresponds to one of the following keys on the keyboard: Q, W, E, A, S, D, Z, X, C. The drum pads MUST be in this order.
 
-## Running end-to-end tests
+- *User Story #4:* Within each .drum-pad, there should be an HTML5 audio element which has a src attribute pointing to an audio clip, a class name of clip, and an id corresponding to the inner text of its parent .drum-pad (e.g. id="Q", id="W", id="E" etc.).
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- *User Story #5:* When I click on a .drum-pad element, the audio clip contained in its child audio element should be triggered.
 
-## Further help
+- *User Story #6:* When I press the trigger key associated with each .drum-pad, the audio clip contained in its child audio element should be triggered (e.g. pressing the Q key should trigger the drum pad which contains the string "Q", pressing the W key should trigger the drum pad which contains the string "W", etc.).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- *User Story #7:* When a .drum-pad is triggered, a string describing the associated audio clip is displayed as the inner text of the #display element (each string must be unique).
