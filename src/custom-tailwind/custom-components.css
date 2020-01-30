@@ -1,0 +1,7 @@
+.drum-pad {
+  @apply bg-yellow-500;
+  @apply text-black;
+  @apply rounded;
+  margin: 15px;
+  width: 10em;
+}
