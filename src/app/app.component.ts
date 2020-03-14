@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  @ViewChild('display', {static: true}) display: ElementRef;
   title = 'drum-machine';
+
+  playMedia(fileName: string){
+    console.log(fileName);
+    this.display.nativeElement.innerHTML = fileName;
+  }
 }
