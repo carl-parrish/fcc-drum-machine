@@ -1,6 +1,6 @@
 <section id="drum-machine" class="mt-10 md:flex">
- <button class="btn drum-pad" id="highHat" (click)="playMedia('Q')">
-  <audio class="clip" id="Q" src=""></audio>
+ <button class="btn drum-pad" id="tom1" (click)="onTap('Q','RDM_Raw_SY1-Tom01.wav',this)">
+  <audio class="clip" id="Q" src="RDM_Raw_SY1-Tom01.wav"></audio>
    Q</button>
 
 <button class="btn drum-pad" id="snare" (click)="playMedia('W')">
@@ -34,6 +34,10 @@
 <button class="btn drum-pad" id="tom3" (click)="playMedia('C')">
   <audio class="clip" id="C" src=""></audio>
 C</button>
+
+<button *ngFor="let drumpad of drumKeys | keyvalue" class="btn drum-pad" id={{drumpad.value}} >
+  {{drumpad.key}}</button>
+
 
 <caption id="display" #display>
 
