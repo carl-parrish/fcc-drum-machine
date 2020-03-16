@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +22,21 @@ export class AppComponent {
 
   baseURL = 'https://sourcecodesamurai.s3-us-west-2.amazonaws.com/media/';
   title = 'drum-machine';
+
+  keyCodes = [113,119,101,97,115,100,122,120,99,81,87,69,65,83,68,90,88,67];
+
+  @HostListener('window:keypress', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    console.log(event.keyCode);
+
+    if( this.keyCodes.includes(event.keyCode)){
+        const key = String.fromCharCode(event.keyCode).toUpperCase();
+        const audio = document.getElementById(key) as HTMLAudioElement;
+        this.updateDisplay(key);
+        this.playMedia(audio);
+    }
+
+  }
 
   onTap(key: string, event: Event){
     let audioObject = (event.target as Element).firstElementChild as HTMLAudioElement;
