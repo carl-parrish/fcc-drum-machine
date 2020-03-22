@@ -21,7 +21,7 @@ export class AppComponent {
   };
 
   baseURL = 'https://sourcecodesamurai.s3-us-west-2.amazonaws.com/media/';
-  title = 'drum-machine';
+  title = 'Drum Machine';
 
   keyCodes = [113,119,101,97,115,100,122,120,99,81,87,69,65,83,68,90,88,67];
 

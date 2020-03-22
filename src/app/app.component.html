@@ -1,7 +1,7 @@
-<section id="drum-machine" class="mt-10 md:flex mx:auto">
-
+<section id="drum-machine" class="mt-10 grid grid-col-1 md:grid-col-3 gap-4 mx-auto max-w-screen-md bg-black border-grey-500 border-solid">
+<h1 class="col-span-3 mx-auto text-xl text-white text-center mb-5">{{ title }}</h1>
 <button *ngFor="let drumpad of drumKeys | keyvalue:noSort"
-        class="btn drum-pad"
+        class="btn drum-pad col-span-1 shadow-x1"
          id={{drumpad.value}}
          (click)="onTap(drumpad.key, $event)" >
          <audio class="clip" id={{drumpad.key}} src="{{baseURL + drumpad.value}}"></audio>
