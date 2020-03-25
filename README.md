@@ -1,10 +1,9 @@
 # Front End Libraries Projects - Build a Drum Machine
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23. Then updatedto version 9.0.7
 
-For this project I wanted to try on [Tailwindcss](https://tailwindcss.com/), & [SCULLY](https://github.com/scullyio/scully),
-Scully is dependent on Angular 9 though and as of this writting NG 9 hasn't been released. 
-So I'm doing the lion's share in version 8.3.23 then I'll try out upgrading to 9 from the command line
+For this project I wanted to try out [Tailwindcss](https://tailwindcss.com/), & [SCULLY](https://github.com/scullyio/scully),
+Installed Taliwindcss using [this guide](https://dev.to/seankerwin/angular-8-tailwind-css-guide-3m45) 
 
 
 *Objective*: Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: https://codepen.io/freeCodeCamp/full/MJyNMd.
