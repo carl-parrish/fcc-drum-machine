@@ -2,13 +2,13 @@
 <h1 class="col-span-3 mx-auto text-xl text-white text-center mb-5">{{ title }}</h1>
 <button *ngFor="let drumpad of drumKeys | keyvalue:noSort"
         class="btn drum-pad col-span-1 shadow-x1"
-         id={{drumpad.value}}
+         [id]="drumpad.value"
          (click)="onTap(drumpad.key, $event)" >
          <audio class="clip" id={{drumpad.key}} src="{{baseURL + drumpad.value}}"></audio>
   {{drumpad.key}}</button>
 
 
-<caption id="display" #display>
+<caption id="display" class="col-span-3 mx-auto text-xl bg-gray-500 min-w-full text-blue-500" #display>
 
 </caption>
 
